@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: local-tts-spring-boot-deployment
+spec:
+  selector:
+    matchLabels:
+      app: local-tts-spring-boot
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: local-tts-spring-boot
+    spec:
+      containers:
+      - name: tts-app
+        image: peeweeto/tts-app:1.0
+        ports:
+        - containerPort: 8080
