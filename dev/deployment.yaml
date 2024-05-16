@@ -15,5 +15,17 @@ spec:
       containers:
       - name: tts-app
         image: peeweeto/tts-app:1.0
+        env:
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: aws-credentials
+                key: AWS_ACCESS_KEY_ID
+          - name: AWS_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: aws-credentials
+                key: AWS_SECRET_ACCESS_KEY
         ports:
         - containerPort: 8080
+
