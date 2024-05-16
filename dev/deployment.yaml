@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: local-tts-spring-boot
+        app: tts-app
     spec:
       containers:
       - name: tts-app
