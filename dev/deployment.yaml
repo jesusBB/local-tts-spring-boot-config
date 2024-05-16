@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: local-tts-spring-boot-deployment
+  name: tts-app
 spec:
   selector:
     matchLabels:
-      app: local-tts-spring-boot
+      app: tts-app
   replicas: 2
   template:
     metadata:
